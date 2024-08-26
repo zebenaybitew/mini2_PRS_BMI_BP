@@ -12,19 +12,19 @@ library(dplyr)
 library(ggplot2)
 
 ## Read the GRS Data
-grs_data <- read.table("/Users/cr23646/Desktop/Mini2/PRS/GRSscore.sscore", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+#grs_data <- read.table("/Users/cr23646/Desktop/Mini2/PRS/GRSscore.sscore", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 
 ## View the data
-head(grs_data)
-dim(grs_data)
+#head(grs_data)
+#dim(grs_data)
 # change column names 
-colnames(grs_data) <- c("IID", "CNT", "CNT2", "PRS")
+#colnames(grs_data) <- c("IID", "CNT", "CNT2", "PRS")
 
 ## standardized the PRS 
-grs_data$SCOREstd <- scale(grs_data$PRS, center=TRUE, scale=TRUE) 
+#grs_data$SCOREstd <- scale(grs_data$PRS, center=TRUE, scale=TRUE) 
 
 # Converting the SCOREstd column to numeric
-grs_data$SCOREstd <- as.numeric(grs_data$SCOREstd)
+#grs_data$SCOREstd <- as.numeric(grs_data$SCOREstd)
 
 
 
