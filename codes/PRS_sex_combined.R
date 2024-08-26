@@ -1,4 +1,4 @@
-################## BMI_PRS using UKB data sex combined #####################################
+################## BMI_GRS using UKB data sex combined #####################################
 
 ############## Set Working directory ###########################################
 
@@ -38,11 +38,11 @@ write.csv(grs_data, 'grs_data_sex_combined.csv', row.names = TRUE)
 
 ############# plot a histogram of the standardized score 
 # Calculate the mean and standard deviation
-mean_score <- mean(grs_data$SD_score, na.rm = TRUE)
-sd_score <- sd(grs_data$SD_score, na.rm = TRUE)
+mean_score <- mean(grs_data$SCOREstd, na.rm = TRUE)
+sd_score <- sd(grs_data$SCOREstd, na.rm = TRUE)
 
 # Create the histogram with ggplot2
-plot<-ggplot(grs_data, aes(x = SD_score)) +
+plot<-ggplot(grs_data, aes(x = SCOREstd)) +
   geom_histogram(bins = 40, fill = "lightblue", color = "black") +
   geom_vline(aes(xintercept = mean_score, color = "Mean"), linetype = "dashed", size = 1) +
   geom_vline(aes(xintercept = mean_score + sd_score, color = "Mean + SD"), linetype = "dashed", size = 1) +
@@ -60,7 +60,7 @@ plot<-ggplot(grs_data, aes(x = SD_score)) +
 ggsave(filename = "histogram_prs_scores.pdf", plot = plot, width = 8, height = 6, dpi = 300)
 
 # Create a violin plot
-ggplot(grs_data, aes(y = SD_score)) +
+ggplot(grs_data, aes(y = SCOREstd)) +
   geom_boxplot(fill = "lightblue", color = "black") +
   theme_minimal(base_size = 8) + # Smaller base font size
   theme(plot.margin = unit(c(0.1, 0.1, 0.1, 0.1), "cm")) + # Smaller margins
@@ -68,7 +68,7 @@ ggplot(grs_data, aes(y = SD_score)) +
 
 
 
-############### combine GRS with phenotype and check if GRS is associated with BMI #########################
+
 
 
 
