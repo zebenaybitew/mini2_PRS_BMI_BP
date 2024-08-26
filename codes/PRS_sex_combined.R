@@ -24,7 +24,7 @@ library(ggplot2)
 #grs_data$SCOREstd <- scale(grs_data$PRS, center=TRUE, scale=TRUE) 
 
 # Converting the SCOREstd column to numeric
-#grs_data$SCOREstd <- as.numeric(grs_data$SCOREstd)
+grs_data$SCOREstd <- as.numeric(grs_data$SCOREstd)
 
 
 
